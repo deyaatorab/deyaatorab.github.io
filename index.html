@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>معرض الأعمال المهني | Professional Portfolio</title>
+  <title>ضياء الدين تراب | باحث أكاديمي ومصمم محتوى علمي</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #1e3a8a;
-      --primary-light: #2563eb;
-      --accent: #0d9488;
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --radius: 12px;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --bg-dark: #070d18;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary-blue: #2563eb;
+      --primary-cyan: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, #38bdf8, #2563eb);
+      --text-white: #f8fafc;
+      --text-gray: #94a3b8;
+      --whatsapp: #25d366;
+      --radius: 16px;
     }
 
     * {
@@ -24,91 +25,171 @@
       margin: 0;
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
-      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      color: var(--text-white);
       line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.12) 0%, transparent 45%);
+      background-attachment: fixed;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Top Navigation Bar */
+    /* Top Navigation */
     .top-nav {
-      background: #0b1329;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(7, 13, 24, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--card-border);
+      padding: 1rem 0;
     }
 
     .nav-wrapper {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
+    }
+
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #fff;
+    }
+
+    .logo-badge span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .lang-btn {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.35rem 0.9rem;
-      border-radius: 6px;
+      border: 1px solid var(--card-border);
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
       font-size: 0.85rem;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
     }
 
     .lang-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
-    /* Header & Hero */
+    /* Hero Section */
     header {
-      background: linear-gradient(135deg, #0f172a, var(--primary));
-      color: white;
-      padding: 4rem 0 3.5rem;
+      padding: 5rem 0 3.5rem;
       text-align: center;
+      position: relative;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.35rem 1rem;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+      padding: 0.45rem 1.25rem;
       border-radius: 999px;
       font-size: 0.85rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
     }
 
     h1 {
-      font-size: 2.3rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      max-width: 680px;
-      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
     }
 
-    /* Credentials Bar */
-    .credentials-bar {
+    /* Hero CTA buttons */
+    .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
       flex-wrap: wrap;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1.75rem;
+    }
+
+    .cta-btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn-primary {
+      background: var(--accent-gradient);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    .cta-btn-primary:hover {
+      box-shadow: 0 6px 28px rgba(37, 99, 235, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .cta-btn-whatsapp {
+      background: #15803d;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .cta-btn-whatsapp:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    /* Stats Grid */
+    .credentials-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
     }
 
     .stat-item {
@@ -116,113 +197,139 @@
     }
 
     .stat-number {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #38bdf8;
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.25rem;
     }
 
     .stat-label {
       font-size: 0.85rem;
-      color: #94a3b8;
+      color: var(--text-gray);
+      font-weight: 500;
     }
 
-    /* Section Styling */
+    /* Section Headers */
     section {
-      padding: 3.5rem 0;
+      padding: 4.5rem 0;
     }
 
     .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 0.4rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    html[dir="rtl"] .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      right: 0;
-      width: 40px;
-      height: 3px;
-      background-color: var(--primary-light);
-      border-radius: 2px;
-    }
-
-    html[dir="ltr"] .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background-color: var(--primary-light);
-      border-radius: 2px;
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
     .section-desc {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
     }
 
-    /* Filters */
+    /* Category Filter Buttons */
     .filters {
       display: flex;
       gap: 0.75rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       flex-wrap: wrap;
     }
 
     .filter-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1.25rem;
-      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-gray);
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
       cursor: pointer;
       font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--primary);
+      background: var(--primary-blue);
       color: white;
-      border-color: var(--primary);
+      border-color: var(--primary-blue);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
     }
 
     /* Projects Grid */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
     }
 
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
       display: flex;
       flex-direction: column;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-8px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .card-img {
-      height: 170px;
-      background: #e2e8f0;
+    /* Thumbnail Box with Zoom */
+    .card-img-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #111827;
+      cursor: pointer;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card-img-wrapper:hover img {
+      transform: scale(1.08);
+    }
+
+    .card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 13, 24, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card-img-wrapper:hover .card-img-overlay {
+      opacity: 1;
+    }
+
+    .zoom-btn {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .card-body {
-      padding: 1.5rem;
+      padding: 1.75rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -230,398 +337,522 @@
 
     .card-category {
       font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
+      font-weight: 700;
+      color: var(--primary-cyan);
       text-transform: uppercase;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
     }
 
     .card-title {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      color: #fff;
     }
 
     .card-text {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.25rem;
+      color: var(--text-gray);
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
       flex-grow: 1;
+      line-height: 1.65;
     }
 
     .card-tags {
       display: flex;
       gap: 0.4rem;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .tag {
-      background: #f1f5f9;
-      color: #475569;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
       font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 500;
     }
 
     .card-actions {
       display: flex;
       gap: 0.75rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.2rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      gap: 6px;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
       cursor: pointer;
+      transition: all 0.25s ease;
     }
 
-    .btn-primary {
-      background: var(--primary-light);
-      color: white;
-      border: 1px solid var(--primary-light);
+    .btn-action-primary {
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.5);
+      color: #93c5fd;
       flex: 1;
     }
 
-    .btn-primary:hover {
-      background: var(--primary);
+    .btn-action-primary:hover {
+      background: var(--primary-blue);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
     }
 
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: transparent;
+    .btn-download {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-gray);
     }
 
-    .btn-outline:hover {
-      background: #f1f5f9;
+    .btn-download:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
-    /* Trust & Official Verification Section */
+    /* Verification & Contact */
     .trust-section {
-      background: #f1f5f9;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 2rem;
-      margin-top: 2rem;
-      border: 1px solid var(--border);
+      padding: 2.5rem;
+      margin-top: 3.5rem;
+      backdrop-filter: blur(16px);
     }
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.75rem;
     }
 
     .trust-card {
-      background: var(--surface);
-      padding: 1rem 1.25rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      padding: 1.4rem;
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .trust-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .trust-icon {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      margin-bottom: 0.4rem;
     }
 
     .trust-title {
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .trust-desc {
+      font-size: 0.85rem;
+      color: var(--text-gray);
     }
 
     .trust-link {
-      font-size: 0.85rem;
-      color: var(--primary-light);
+      font-size: 0.88rem;
+      color: #38bdf8;
       text-decoration: none;
       word-break: break-all;
+      margin-top: 0.4rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .trust-link:hover {
       text-decoration: underline;
     }
 
-    /* Footer */
+    /* Image Modal (Lightbox) */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    html[dir="rtl"] .modal-close {
+      left: auto;
+      right: 25px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: #25d366;
+      color: white;
+      border-radius: 999px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+    }
+
     footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
+      border-top: 1px solid var(--card-border);
+      padding: 2.5rem 0;
       text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+      color: var(--text-gray);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 640px) {
-      h1 { font-size: 1.8rem; }
-      .credentials-bar { gap: 1.2rem; }
-      .trust-section { padding: 1.25rem; }
+      h1 { font-size: 2.1rem; }
+      .credentials-bar { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .trust-section { padding: 1.5rem; }
+      .whatsapp-float { bottom: 15px; left: 15px; padding: 10px 16px; font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation & Language Toggle -->
-  <div class="top-nav">
+  <!-- Top Bar -->
+  <nav class="top-nav">
     <div class="container nav-wrapper">
+      <div class="logo-badge">
+        <i class="fa-solid fa-graduation-cap" style="color: #38bdf8;"></i>
+        <span>ضياء الدين تراب</span>
+      </div>
       <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">
-        🌐 English
+        <i class="fa-solid fa-globe"></i> <span>English</span>
       </button>
     </div>
-  </div>
+  </nav>
 
-  <!-- Header / Hero Section -->
+  <!-- Hero Header -->
   <header>
     <div class="container">
-      <span class="badge" data-i18n="badge">معرض أعمال موثق ومستقل</span>
-      <h1 data-i18n="heroTitle">المهندس / المستشار المهني</h1>
+      <div class="hero-badge" data-i18n="badge">
+        <i class="fa-solid fa-certificate"></i> باحث أكاديمي ومختص تصميم علمي معتمد
+      </div>
+      <h1 data-i18n="heroTitle">ضياء الدين تراب</h1>
       <p class="subtitle" data-i18n="heroDesc">
-        متخصص في إدارة المشاريع، الاستشارات، وتطوير الحلول المهنية وفق أعلى معايير الكفاءة التشغيلية والمصداقية.
+        إعداد وتطوير الأبحاث والدراسات العلمية المحكمة، تصميم عروض تقديمية احترافية (PowerPoint)، نمذجة وتصميم الإنفوجرافيك الأكاديمي، وبناء الخرائط الذهنية وفق أعلى معايير الجودة والتوثيق الدولي (APA 7th).
       </p>
-      
+
+      <div class="hero-actions">
+        <a href="https://wa.me/201097424243" class="cta-btn cta-btn-whatsapp" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="heroWhatsapp">محادثة واتساب فورية</span>
+        </a>
+        <a href="#projects" class="cta-btn cta-btn-primary">
+          <i class="fa-solid fa-layer-group"></i> <span data-i18n="heroExplore">استعراض سابقة الأعمال</span>
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
       <div class="credentials-bar">
         <div class="stat-item">
-          <div class="stat-number">+25</div>
-          <div class="stat-label" data-i18n="statProjects">مشروع مكتمل</div>
+          <div class="stat-number">+100</div>
+          <div class="stat-label" data-i18n="statResearches">بحث ودراسة منجزة</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">100%</div>
-          <div class="stat-label" data-i18n="statCommitment">التزام بالمواعيد والجودة</div>
+          <div class="stat-label" data-i18n="statQuality">التزام بالمنهجية العلمية</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" data-i18n="statVerifiedVal">معتمد وموثق</div>
-          <div class="stat-label" data-i18n="statVerified">بوابات العمل الرسمية</div>
+          <div class="stat-number">0%</div>
+          <div class="stat-label" data-i18n="statPlagiarism">أصالة علمية (بدون استلال)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-i18n="statVerifiedVal">معتمد</div>
+          <div class="stat-label" data-i18n="statVerified">منصات العمل الحر المعتمدة</div>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Projects Section -->
-  <section class="container">
-    <h2 class="section-title" data-i18n="secPortfolioTitle">سابقة الأعمال (Portfolio)</h2>
+  <section class="container" id="projects">
+    <h2 class="section-title" data-i18n="secPortfolioTitle">سابقة الأعمال ونماذج المشاريع</h2>
     <p class="section-desc" data-i18n="secPortfolioDesc">
-      نماذج واقعية للمشاريع المنفذة تشمل التخطيط، التحليل، والتنفيذ النهائي.
+      انقر على أي صورة لتكبيرها واستعراض تفاصيل التصميم أو اضغط على تحميل لمعاينة الملفات:
     </p>
 
     <!-- Filters -->
     <div class="filters">
       <button class="filter-btn active" onclick="filterProjects('all')" data-i18n="filterAll">الكل</button>
-      <button class="filter-btn" onclick="filterProjects('consulting')" data-i18n="filterConsulting">استشارات وتخطيط</button>
-      <button class="filter-btn" onclick="filterProjects('tech')" data-i18n="filterTech">حلول رقمية</button>
-      <button class="filter-btn" onclick="filterProjects('management')" data-i18n="filterManagement">إدارة وتشغيل</button>
+      <button class="filter-btn" onclick="filterProjects('research')" data-i18n="filterResearch">أبحاث ودراسات علمية</button>
+      <button class="filter-btn" onclick="filterProjects('presentation')" data-i18n="filterPresentation">عروض PowerPoint احترافية</button>
+      <button class="filter-btn" onclick="filterProjects('infographic')" data-i18n="filterInfographic">إنفوجرافيك أكاديمي</button>
+      <button class="filter-btn" onclick="filterProjects('mindmap')" data-i18n="filterMindmap">خرائط ذهنية وهيكلية</button>
     </div>
 
-    <!-- Projects Grid -->
+    <!-- Cards Grid -->
     <div class="grid">
 
-      <!-- Project 1 -->
-      <div class="card" data-category="consulting">
-        <div class="card-img" data-i18n="imgPlaceholder">معاينة المشروع</div>
+      <!-- Item 1: Academic Research -->
+      <div class="card" data-category="research">
+        <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="بحث علمي">
+          <div class="card-img-overlay">
+            <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> تكبير النموذج</span>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-category" data-i18n="p1Cat">استشارات وتخطيط</div>
-          <h3 class="card-title" data-i18n="p1Title">دراسة جدوى وتطوير تشغيلي</h3>
-          <p class="card-text" data-i18n="p1Desc">إعداد خطة تشغيلية شاملة ودراسة جدوى لرفع كفاءة العمليات التشغيلية وتخفيض التكاليف الإدارية بنجاح.</p>
+          <div class="card-category" data-i18n="p1Cat">أبحاث ودراسات علمية</div>
+          <h3 class="card-title" data-i18n="p1Title">إعداد خطة بحثية ودراسة محكمة متكاملة</h3>
+          <p class="card-text" data-i18n="p1Desc">صياغة الإطار النظري، المنهجية، الفرضيات، وأدوات جمع البيانات مع توثيق أكاديمي وفق معيار APA 7th وفحص الاستلال العلمي بدقة.</p>
           <div class="card-tags">
-            <span class="tag" data-i18n="p1Tag1">إدارة أعمال</span>
-            <span class="tag">KPIs</span>
-            <span class="tag" data-i18n="p1Tag2">تحليل بيانات</span>
+            <span class="tag">APA 7th</span>
+            <span class="tag" data-i18n="p1Tag1">منهجية علمية</span>
+            <span class="tag" data-i18n="p1Tag2">فحص الاستلال</span>
           </div>
           <div class="card-actions">
-            <a href="#" class="btn btn-primary" target="_blank" data-i18n="btnPreview">معاينة التقرير</a>
-            <a href="#" class="btn btn-outline" target="_blank" data-i18n="btnDetails">التفاصيل</a>
+            <a href="https://wa.me/201097424243?text=أريد%20طلب%20دراسة%20أو%20بحث%20علمي" class="btn btn-action-primary" target="_blank">
+              <i class="fa-solid fa-file-lines"></i> <span data-i18n="btnOrderSample">طلب بحث مماثل</span>
+            </a>
+            <a href="files/sample-research.pdf" class="btn btn-download" download target="_blank" title="تحميل ملف تجريبي">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="card" data-category="tech">
-        <div class="card-img" data-i18n="imgPlaceholder">معاينة المشروع</div>
+      <!-- Item 2: PowerPoint Deck -->
+      <div class="card" data-category="presentation">
+        <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="PowerPoint Deck">
+          <div class="card-img-overlay">
+            <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> تكبير النموذج</span>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-category" data-i18n="p2Cat">حلول رقمية</div>
-          <h3 class="card-title" data-i18n="p2Title">أتمتة وإدارة تدفق العمل</h3>
-          <p class="card-text" data-i18n="p2Desc">بناء وتكامل نظام رقمي سحابي لإدارة وتوزيع المهام وأتمتة التقارير الإدارية بفاعلية.</p>
+          <div class="card-category" data-i18n="p2Cat">عروض PowerPoint احترافية</div>
+          <h3 class="card-title" data-i18n="p2Title">تصميم عرض تقديمي لمناقشة أطروحة علمية</h3>
+          <p class="card-text" data-i18n="p2Desc">عرض شرائح ديناميكي، خالي من الحشو النصي، يعتمد على الاختصار الذكي، التسلسل المنطقي، وتوضيح النتائج بشكل مرئي جذاب ومقنع للجان الحكم.</p>
           <div class="card-tags">
-            <span class="tag" data-i18n="p2Tag1">أتمتة العمليات</span>
-            <span class="tag">Cloud Tools</span>
-            <span class="tag">Integration</span>
+            <span class="tag">Master Slide</span>
+            <span class="tag" data-i18n="p2Tag1">مؤتمرات ومناقشات</span>
+            <span class="tag">Visual Deck</span>
           </div>
           <div class="card-actions">
-            <a href="#" class="btn btn-primary" target="_blank" data-i18n="btnLive">رابط المعاينة</a>
-            <a href="#" class="btn btn-outline" target="_blank" data-i18n="btnDetails">التفاصيل</a>
+            <a href="https://wa.me/201097424243?text=أريد%20طلب%20عرض%20باوربوينت%20احترافي" class="btn btn-action-primary" target="_blank">
+              <i class="fa-solid fa-chalkboard-user"></i> <span data-i18n="btnOrderDeck">طلب عرض تقديمي</span>
+            </a>
+            <a href="files/sample-presentation.pdf" class="btn btn-download" download target="_blank" title="تحميل ملف تجريبي">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Project 3 -->
-      <div class="card" data-category="management">
-        <div class="card-img" data-i18n="imgPlaceholder">معاينة المشروع</div>
+      <!-- Item 3: Infographic -->
+      <div class="card" data-category="infographic">
+        <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Infographic">
+          <div class="card-img-overlay">
+            <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> تكبير النموذج</span>
+          </div>
+        </div>
         <div class="card-body">
-          <div class="card-category" data-i18n="p3Cat">إدارة وتشغيل</div>
-          <h3 class="card-title" data-i18n="p3Title">إعادة هيكلة سلاسل الإمداد</h3>
-          <p class="card-text" data-i18n="p3Desc">تصميم نموذج عمل تنفيذي لإدارة تدفق العمليات والتوريد بما حقق تسريعاً لزمن التسليم بنسبة 30%.</p>
+          <div class="card-category" data-i18n="p3Cat">إنفوجرافيك أكاديمي</div>
+          <h3 class="card-title" data-i18n="p3Title">تصميم إنفوجرافيك لتلخيص نتائج بحثية</h3>
+          <p class="card-text" data-i18n="p3Desc">تحويل البيانات الإحصائية المعقدة والمعادلات إلى رسوم بيانية وتصميمات بصرية واضحة ومقنعة للنشر العلمي وورش العمل والندوات الأكاديمية.</p>
           <div class="card-tags">
-            <span class="tag" data-i18n="p3Tag1">سلاسل الإمداد</span>
-            <span class="tag" data-i18n="p3Tag2">تحسين الأداء</span>
+            <span class="tag" data-i18n="p3Tag1">تصور البيانات</span>
+            <span class="tag">Vector Art</span>
+            <span class="tag" data-i18n="p3Tag2">تلخيص بصري</span>
           </div>
           <div class="card-actions">
-            <a href="#" class="btn btn-primary" target="_blank" data-i18n="btnPreview">معاينة التقرير</a>
-            <a href="#" class="btn btn-outline" target="_blank" data-i18n="btnDetails">التفاصيل</a>
+            <a href="https://wa.me/201097424243?text=أريد%20طلب%20تصميم%20إنفوجرافيك%20علمي" class="btn btn-action-primary" target="_blank">
+              <i class="fa-solid fa-chart-pie"></i> <span data-i18n="btnOrderInfo">طلب إنفوجرافيك</span>
+            </a>
+            <a href="files/sample-infographic.pdf" class="btn btn-download" download target="_blank" title="تحميل ملف تجريبي">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Mind Maps -->
+      <div class="card" data-category="mindmap">
+        <div class="card-img-wrapper" onclick="openLightbox('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80')">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Mind Maps">
+          <div class="card-img-overlay">
+            <span class="zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> تكبير النموذج</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-category" data-i18n="p4Cat">خرائط ذهنية وهيكلية</div>
+          <h3 class="card-title" data-i18n="p4Title">بناء خريطة مفاهيمية لأبعاد ومتغيرات دراسة</h3>
+          <p class="card-text" data-i18n="p4Desc">رسم خرائط ذهنية شاملة توضح المتغير المستقل، التابع، والمتغيرات الوسيطة والمعدلة، مع ربط العلاقات السببية والفرضيات بشكل تفاعلي.</p>
+          <div class="card-tags">
+            <span class="tag" data-i18n="p4Tag1">خرائط مفاهيمية</span>
+            <span class="tag">Variable Modeling</span>
+            <span class="tag" data-i18n="p4Tag2">هيكلة العلاقات</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://wa.me/201097424243?text=أريد%20طلب%20خريطة%20ذهنية%20أو%20مفاهيمية" class="btn btn-action-primary" target="_blank">
+              <i class="fa-solid fa-diagram-project"></i> <span data-i18n="btnOrderMap">طلب خريطة ذهنية</span>
+            </a>
+            <a href="files/sample-mindmap.pdf" class="btn btn-download" download target="_blank" title="تحميل ملف تجريبي">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Trust & Verification Section -->
+    <!-- Trust & Credentials Section -->
     <div class="trust-section">
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;" data-i18n="trustTitle">إثبات المعرض المهني والاعتمادات الرسمية</h3>
-      <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="trustDesc">
-        روابط بوابات التوثيق المهني ومنصات العمل الحر الرسمية لضمان المصداقية القانونية والتعاقدية:
+      <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem;" data-i18n="trustTitle">إثبات المعرض المهني وقنوات التواصل المباشرة</h3>
+      <p style="color: var(--text-gray); font-size: 0.95rem;" data-i18n="trustDesc">
+        بيانات التواصل المباشرة والاعتمادات الرسمية لضمان الجدية وسرعة التنسيق والتعاقد:
       </p>
 
       <div class="trust-grid">
+        <!-- Direct Phone & WhatsApp -->
         <div class="trust-card">
+          <div class="trust-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="trust-title" data-i18n="trustItemPhoneTitle">الهاتف والواتساب المباشر</div>
+          <div class="trust-desc" data-i18n="trustItemPhoneDesc">متاح للاتصال والمراسلة الفورية على مدار الساعة</div>
+          <a href="https://wa.me/201097424243" class="trust-link" style="color: #4ade80;" target="_blank">
+            💬 00201097424243 (واتساب)
+          </a>
+          <a href="tel:+201097424243" class="trust-link">
+            📞 00201097424243 (مكالمة هاتفية)
+          </a>
+        </div>
+
+        <!-- Official Freelance Document -->
+        <div class="trust-card">
+          <div class="trust-icon"><i class="fa-solid fa-id-card"></i></div>
           <div class="trust-title" data-i18n="trustItem1Title">وثيقة العمل الحر الرسمية</div>
-          <a href="https://freelance.sa" class="trust-link" target="_blank" data-i18n="trustItem1Link">بوابة التوثيق والاعتماد الوطني</a>
+          <div class="trust-desc" data-i18n="trustItem1Desc">اعتماد رسمي ساري في تقديم الخدمات الأكاديمية والبحثية</div>
+          <a href="https://freelance.sa" class="trust-link" target="_blank" data-i18n="trustItem1Link">
+            بوابة الاعتماد الوطني <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
         </div>
 
+        <!-- LinkedIn -->
         <div class="trust-card">
-          <div class="trust-title" data-i18n="trustItem2Title">الملف المهني الموثق (LinkedIn)</div>
-          <a href="https://linkedin.com/in/username" class="trust-link" target="_blank">linkedin.com/in/username</a>
+          <div class="trust-icon"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="trust-title" data-i18n="trustItem2Title">الملف المهني الأكاديمي (LinkedIn)</div>
+          <div class="trust-desc" data-i18n="trustItem2Desc">السيرة الذاتية المهنية والشهادات المعتمدة</div>
+          <a href="https://linkedin.com/in/deyaatorab" class="trust-link" target="_blank">
+            linkedin.com/in/deyaatorab <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
         </div>
 
+        <!-- GitHub / Portfolio Repository -->
         <div class="trust-card">
-          <div class="trust-title" data-i18n="trustItem3Title">المستودع ومعرض المشاريع (GitHub / Behance)</div>
-          <a href="https://github.com/username" class="trust-link" target="_blank">github.com/username</a>
-        </div>
-
-        <div class="trust-card">
-          <div class="trust-title" data-i18n="trustItem4Title">قنوات التواصل والتعاقد المباشر</div>
-          <a href="mailto:contact@domain.com" class="trust-link">contact@domain.com</a>
+          <div class="trust-icon"><i class="fa-brands fa-github"></i></div>
+          <div class="trust-title" data-i18n="trustItem3Title">المستودع الرقمي للنماذج</div>
+          <div class="trust-desc" data-i18n="trustItem3Desc">روابط مباشرة لملفات العروض والتقارير</div>
+          <a href="https://github.com/deyaatorab" class="trust-link" target="_blank">
+            github.com/deyaatorab <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Lightbox Modal for Full-Size Images -->
+  <div class="modal" id="lightboxModal" onclick="closeLightbox()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg" src="" alt="Full Preview">
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/201097424243" target="_blank" class="whatsapp-float">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span data-i18n="floatWhatsApp">تواصل عبر واتساب</span>
+  </a>
+
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p data-i18n="footerText">© 2026 جميع الحقوق محفوظة — سابقة أعمال مهنية موثقة.</p>
+      <p data-i18n="footerText">© 2026 ضياء الدين تراب — جميع الحقوق محفوظة | تواصل مباشر: 00201097424243</p>
     </div>
   </footer>
 
   <script>
-    // Translation dictionary
-    const translations = {
-      ar: {
-        langBtn: "🌐 English",
-        badge: "معرض أعمال موثق ومستقل",
-        heroTitle: "المهندس / المستشار المهني",
-        heroDesc: "متخصص في إدارة المشاريع، الاستشارات، وتطوير الحلول المهنية وفق أعلى معايير الكفاءة التشغيلية والمصداقية.",
-        statProjects: "مشروع مكتمل",
-        statCommitment: "التزام بالمواعيد والجودة",
-        statVerifiedVal: "معتمد وموثق",
-        statVerified: "بوابات العمل الرسمية",
-        secPortfolioTitle: "سابقة الأعمال (Portfolio)",
-        secPortfolioDesc: "نماذج واقعية للمشاريع المنفذة تشمل التخطيط، التحليل، والتنفيذ النهائي.",
-        filterAll: "الكل",
-        filterConsulting: "استشارات وتخطيط",
-        filterTech: "حلول رقمية",
-        filterManagement: "إدارة وتشغيل",
-        imgPlaceholder: "معاينة المشروع",
-        btnPreview: "معاينة التقرير",
-        btnLive: "رابط المعاينة",
-        btnDetails: "التفاصيل",
-        p1Cat: "استشارات وتخطيط",
-        p1Title: "دراسة جدوى وتطوير تشغيلي",
-        p1Desc: "إعداد خطة تشغيلية شاملة ودراسة جدوى لرفع كفاءة العمليات التشغيلية وتخفيض التكاليف الإدارية بنجاح.",
-        p1Tag1: "إدارة أعمال",
-        p1Tag2: "تحليل بيانات",
-        p2Cat: "حلول رقمية",
-        p2Title: "أتمتة وإدارة تدفق العمل",
-        p2Desc: "بناء وتكامل نظام رقمي سحابي لإدارة وتوزيع المهام وأتمتة التقارير الإدارية بفاعلية.",
-        p2Tag1: "أتمتة العمليات",
-        p3Cat: "إدارة وتشغيل",
-        p3Title: "إعادة هيكلة سلاسل الإمداد",
-        p3Desc: "تصميم نموذج عمل تنفيذي لإدارة تدفق العمليات والتوريد بما حقق تسريعاً لزمن التسليم بنسبة 30%.",
-        p3Tag1: "سلاسل الإمداد",
-        p3Tag2: "تحسين الأداء",
-        trustTitle: "إثبات المعرض المهني والاعتمادات الرسمية",
-        trustDesc: "روابط بوابات التوثيق المهني ومنصات العمل الحر الرسمية لضمان المصداقية القانونية والتعاقدية:",
-        trustItem1Title: "وثيقة العمل الحر الرسمية",
-        trustItem1Link: "بوابة التوثيق والاعتماد الوطني",
-        trustItem2Title: "الملف المهني الموثق (LinkedIn)",
-        trustItem3Title: "المستودع ومعرض المشاريع (GitHub / Behance)",
-        trustItem4Title: "قنوات التواصل والتعاقد المباشر",
-        footerText: "© 2026 جميع الحقوق محفوظة — سابقة أعمال مهنية موثقة."
-      },
-      en: {
-        langBtn: "🌐 العربية",
-        badge: "Verified Freelance Portfolio",
-        heroTitle: "Professional Consultant & Specialist",
-        heroDesc: "Specialized in project management, consulting, and delivering digital solutions with a focus on operational efficiency and proven credibility.",
-        statProjects: "Completed Projects",
-        statCommitment: "On-Time & Quality Delivery",
-        statVerifiedVal: "Accredited",
-        statVerified: "Official Platforms",
-        secPortfolioTitle: "Project Portfolio",
-        secPortfolioDesc: "Real-world showcase of executed projects covering planning, analysis, and execution.",
-        filterAll: "All",
-        filterConsulting: "Consulting & Planning",
-        filterTech: "Digital Solutions",
-        filterManagement: "Operations",
-        imgPlaceholder: "Project Visual",
-        btnPreview: "View Report",
-        btnLive: "Live Demo",
-        btnDetails: "Details",
-        p1Cat: "Consulting & Planning",
-        p1Title: "Feasibility Study & Operational Plan",
-        p1Desc: "Formulated an actionable feasibility study and operational roadmap, streamlining workflows and reducing administrative costs.",
-        p1Tag1: "Business Admin",
-        p1Tag2: "Data Analysis",
-        p2Cat: "Digital Solutions",
-        p2Title: "Workflow Automation & Management",
-        p2Desc: "Engineered and integrated cloud-based workflows for seamless task routing and automated managerial reporting.",
-        p2Tag1: "Process Automation",
-        p3Cat: "Operations",
-        p3Title: "Supply Chain Optimization",
-        p3Desc: "Restructured inventory and fulfillment pipelines, achieving a 30% reduction in turnaround times.",
-        p3Tag1: "Supply Chain",
-        p3Tag2: "Performance",
-        trustTitle: "Professional Verification & Official Credentials",
-        trustDesc: "Accredited platform verification and professional channels ensuring legal standing and contractual reliability:",
-        trustItem1Title: "Official Freelance Credential",
-        trustItem1Link: "National Verification Portal",
-        trustItem2Title: "Verified Professional Profile (LinkedIn)",
-        trustItem3Title: "Project Repository (GitHub / Behance)",
-        trustItem4Title: "Direct Inquiries & Contracts",
-        footerText: "© 2026 All Rights Reserved — Verified Professional Portfolio."
-      }
-    };
-
-    let currentLang = 'ar';
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      
-      // Update HTML attributes
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      
-      // Update button text
-      document.getElementById('lang-btn').textContent = translations[currentLang].langBtn;
-      
-      // Update all translatable elements
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-          el.textContent = translations[currentLang][key];
-        }
-      });
+    // Lightbox handlers
+    function openLightbox(src) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('modalImg');
+      img.src = src;
+      modal.classList.add('active');
     }
 
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // Projects Filter
     function filterProjects(category) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -633,6 +864,139 @@
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
+        }
+      });
+    }
+
+    // Multi-language translation dictionary
+    const translations = {
+      ar: {
+        langBtn: "English",
+        badge: "باحث أكاديمي ومختص تصميم علمي معتمد",
+        heroTitle: "ضياء الدين تراب",
+        heroDesc: "إعداد وتطوير الأبحاث والدراسات العلمية المحكمة، تصميم عروض تقديمية احترافية (PowerPoint)، نمذجة وتصميم الإنفوجرافيك الأكاديمي، وبناء الخرائط الذهنية وفق أعلى معايير الجودة والتوثيق الدولي (APA 7th).",
+        heroWhatsapp: "محادثة واتساب فورية",
+        heroExplore: "استعراض سابقة الأعمال",
+        statResearches: "بحث ودراسة منجزة",
+        statQuality: "التزام بالمنهجية العلمية",
+        statPlagiarism: "أصالة علمية (بدون استلال)",
+        statVerifiedVal: "معتمد",
+        statVerified: "منصات العمل الحر المعتمدة",
+        secPortfolioTitle: "سابقة الأعمال ونماذج المشاريع",
+        secPortfolioDesc: "انقر على أي صورة لتكبيرها واستعراض تفاصيل التصميم أو اضغط على تحميل لمعاينة الملفات:",
+        filterAll: "الكل",
+        filterResearch: "أبحاث ودراسات علمية",
+        filterPresentation: "عروض PowerPoint احترافية",
+        filterInfographic: "إنفوجرافيك أكاديمي",
+        filterMindmap: "خرائط ذهنية وهيكلية",
+        p1Cat: "أبحاث ودراسات علمية",
+        p1Title: "إعداد خطة بحثية ودراسة محكمة متكاملة",
+        p1Desc: "صياغة الإطار النظري، المنهجية، الفرضيات، وأدوات جمع البيانات مع توثيق أكاديمي وفق معيار APA 7th وفحص الاستلال العلمي بدقة.",
+        p1Tag1: "منهجية علمية",
+        p1Tag2: "فحص الاستلال",
+        btnOrderSample: "طلب بحث مماثل",
+        p2Cat: "عروض PowerPoint احترافية",
+        p2Title: "تصميم عرض تقديمي لمناقشة أطروحة علمية",
+        p2Desc: "عرض شرائح ديناميكي، خالي من الحشو النصي، يعتمد على الاختصار الذكي، التسلسل المنطقي، وتوضيح النتائج بشكل مرئي جذاب ومقنع للجان الحكم.",
+        p2Tag1: "مؤتمرات ومناقشات",
+        btnOrderDeck: "طلب عرض تقديمي",
+        p3Cat: "إنفوجرافيك أكاديمي",
+        p3Title: "تصميم إنفوجرافيك لتلخيص نتائج بحثية",
+        p3Desc: "تحويل البيانات الإحصائية المعقدة والمعادلات إلى رسوم بيانية وتصميمات بصرية واضحة ومقنعة للنشر العلمي وورش العمل والندوات الأكاديمية.",
+        p3Tag1: "تصور البيانات",
+        p3Tag2: "تلخيص بصري",
+        btnOrderInfo: "طلب إنفوجرافيك",
+        p4Cat: "خرائط ذهنية وهيكلية",
+        p4Title: "بناء خريطة مفاهيمية لأبعاد ومتغيرات دراسة",
+        p4Desc: "رسم خرائط ذهنية شاملة توضح المتغير المستقل، التابع، والمتغيرات الوسيطة والمعدلة، مع ربط العلاقات السببية والفرضيات بشكل تفاعلي.",
+        p4Tag1: "خرائط مفاهيمية",
+        p4Tag2: "هيكلة العلاقات",
+        btnOrderMap: "طلب خريطة ذهنية",
+        trustTitle: "إثبات المعرض المهني وقنوات التواصل المباشرة",
+        trustDesc: "بيانات التواصل المباشرة والاعتمادات الرسمية لضمان الجدية وسرعة التنسيق والتعاقد:",
+        trustItemPhoneTitle: "الهاتف والواتساب المباشر",
+        trustItemPhoneDesc: "متاح للاتصال والمراسلة الفورية على مدار الساعة",
+        trustItem1Title: "وثيقة العمل الحر الرسمية",
+        trustItem1Desc: "اعتماد رسمي ساري في تقديم الخدمات الأكاديمية والبحثية",
+        trustItem1Link: "بوابة الاعتماد الوطني",
+        trustItem2Title: "الملف المهني الأكاديمي (LinkedIn)",
+        trustItem2Desc: "السيرة الذاتية المهنية والشهادات المعتمدة",
+        trustItem3Title: "المستودع الرقمي للنماذج",
+        trustItem3Desc: "روابط مباشرة لملفات العروض والتقارير",
+        floatWhatsApp: "تواصل عبر واتساب",
+        footerText: "© 2026 ضياء الدين تراب — جميع الحقوق محفوظة | تواصل مباشر: 00201097424243"
+      },
+      en: {
+        langBtn: "العربية",
+        badge: "Accredited Academic Researcher & Scientific Designer",
+        heroTitle: "Deyaa Torab",
+        heroDesc: "Formulating peer-reviewed academic research, defense-ready PowerPoint presentations, scientific data visualizations, and structural mind maps adhering to APA 7th standards.",
+        heroWhatsapp: "Instant WhatsApp Chat",
+        heroExplore: "Explore Portfolio",
+        statResearches: "Completed Studies",
+        statQuality: "Research Rigor",
+        statPlagiarism: "Zero Plagiarism",
+        statVerifiedVal: "Accredited",
+        statVerified: "Official Platforms",
+        secPortfolioTitle: "Projects & Academic Portfolio",
+        secPortfolioDesc: "Click on any visual to inspect details or use the download button to preview sample files:",
+        filterAll: "All",
+        filterResearch: "Scientific Research",
+        filterPresentation: "PowerPoint Design",
+        filterInfographic: "Academic Infographics",
+        filterMindmap: "Mind Maps & Frameworks",
+        p1Cat: "Scientific Research",
+        p1Title: "Comprehensive Research Proposal & Peer-Reviewed Study",
+        p1Desc: "Formulating rigorous theoretical frameworks, hypotheses, and methodology with APA 7th citations and strict plagiarism screening.",
+        p1Tag1: "Methodology",
+        p1Tag2: "Plagiarism Check",
+        btnOrderSample: "Order Similar Study",
+        p2Cat: "PowerPoint Design",
+        p2Title: "Defense-Ready Academic Slide Deck",
+        p2Desc: "Dynamic, minimalist slide deck engineered for thesis defense and conferences, focusing on visual clarity and concise messaging.",
+        p2Tag1: "Conferences & Defenses",
+        btnOrderDeck: "Order Slide Deck",
+        p3Cat: "Academic Infographics",
+        p3Title: "Data Visualization & Research Summaries",
+        p3Desc: "Translating dense statistical findings and variables into intuitive, high-resolution scientific infographics for publication.",
+        p3Tag1: "Data Viz",
+        p3Tag2: "Visual Abstract",
+        btnOrderInfo: "Order Infographic",
+        p4Cat: "Mind Maps & Frameworks",
+        p4Title: "Conceptual Framework & Variable Modeling",
+        p4Desc: "Developing clear conceptual maps connecting independent, dependent, and mediating variables with precise relationship flows.",
+        p4Tag1: "Concept Maps",
+        p4Tag2: "Variable Flow",
+        btnOrderMap: "Order Mind Map",
+        trustTitle: "Professional Verification & Direct Channels",
+        trustDesc: "Direct contact channels and official accreditations ensuring academic credibility and swift contractual execution:",
+        trustItemPhoneTitle: "Direct Phone & WhatsApp",
+        trustItemPhoneDesc: "Available for direct consultations and inquiries 24/7",
+        trustItem1Title: "Official Freelance Credential",
+        trustItem1Desc: "Certified for academic and consulting services",
+        trustItem1Link: "National Accreditation Portal",
+        trustItem2Title: "Professional Profile (LinkedIn)",
+        trustItem2Desc: "Documented academic & professional record",
+        trustItem3Title: "Digital Repository",
+        trustItem3Desc: "Direct access to presentation and report files",
+        floatWhatsApp: "Chat on WhatsApp",
+        footerText: "© 2026 Deyaa Torab — All Rights Reserved | Direct Contact: 00201097424243"
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+      
+      document.querySelector('#lang-btn span').textContent = translations[currentLang].langBtn;
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
         }
       });
     }
