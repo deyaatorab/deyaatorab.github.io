@@ -4,37 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ضياء الدين تراب | باحث أكاديمي ومصمم محتوى علمي</title>
+  <!-- Google Fonts: Cairo & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
-      --bg-dark: #070d18;
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --primary-blue: #2563eb;
-      --primary-cyan: #06b6d4;
-      --accent-gradient: linear-gradient(135deg, #38bdf8, #2563eb);
-      --text-white: #f8fafc;
-      --text-gray: #94a3b8;
+      --bg-base: #0f1115;
+      --bg-surface: #181b22;
+      --card-bg: rgba(26, 30, 39, 0.7);
+      --card-border: rgba(212, 175, 55, 0.2);
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-gradient: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa7c11 100%);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
       --whatsapp: #25d366;
-      --radius: 16px;
+      --radius: 14px;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', sans-serif;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-white);
+      background-color: var(--bg-base);
+      color: var(--text-main);
       line-height: 1.6;
       overflow-x: hidden;
+      /* Academic Blueprint Subtle Grid Pattern */
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.18) 0%, transparent 40%),
-        radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.12) 0%, transparent 45%);
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
       background-attachment: fixed;
     }
 
@@ -46,13 +55,13 @@
 
     /* Top Navigation */
     .top-nav {
-      background: rgba(7, 13, 24, 0.85);
+      background: rgba(15, 17, 21, 0.9);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--card-border);
-      padding: 1rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 0.9rem 0;
     }
 
     .nav-wrapper {
@@ -65,22 +74,20 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 1.15rem;
       color: #fff;
     }
 
-    .logo-badge span {
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .logo-badge i {
+      color: var(--gold-primary);
     }
 
     .lang-btn {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      border: 1px solid var(--card-border);
-      padding: 0.45rem 1.1rem;
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 0.4rem 1.1rem;
       border-radius: 999px;
       font-size: 0.85rem;
       cursor: pointer;
@@ -92,13 +99,13 @@
     }
 
     .lang-btn:hover {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(212, 175, 55, 0.2);
+      border-color: var(--gold-primary);
     }
 
-    /* Hero Section with Profile Picture */
+    /* Hero Section */
     header {
-      padding: 4rem 0 3rem;
+      padding: 4.5rem 0 3.5rem;
       text-align: center;
       position: relative;
     }
@@ -107,7 +114,7 @@
       position: relative;
       width: 160px;
       height: 160px;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.75rem;
     }
 
     .profile-avatar {
@@ -115,39 +122,40 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(56, 189, 248, 0.85);
-      box-shadow: 0 0 35px rgba(37, 99, 235, 0.5), 0 0 15px rgba(6, 182, 212, 0.3);
-      background-color: #1e293b;
+      border: 3px solid var(--gold-primary);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.25), 0 10px 25px rgba(0, 0, 0, 0.6);
+      background-color: var(--bg-surface);
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: #38bdf8;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
       padding: 0.45rem 1.25rem;
       border-radius: 999px;
       font-size: 0.85rem;
       margin-bottom: 1.25rem;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.3px;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       font-weight: 800;
       margin-bottom: 0.75rem;
       letter-spacing: -0.5px;
-      background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
       font-size: 1.15rem;
-      color: var(--text-gray);
-      max-width: 800px;
+      color: var(--text-muted);
+      max-width: 820px;
       margin: 0 auto 2.25rem;
       line-height: 1.8;
     }
@@ -165,7 +173,7 @@
       padding: 0.8rem 1.8rem;
       border-radius: 999px;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -174,24 +182,25 @@
     }
 
     .cta-btn-primary {
-      background: var(--accent-gradient);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      background: var(--gold-gradient);
+      color: #0f1115;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
     }
 
     .cta-btn-primary:hover {
-      box-shadow: 0 6px 28px rgba(37, 99, 235, 0.6);
+      box-shadow: 0 6px 28px rgba(212, 175, 55, 0.5);
       transform: translateY(-2px);
     }
 
     .cta-btn-whatsapp {
-      background: #15803d;
+      background: #195232;
       color: #fff;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      border: 1px solid rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
     }
 
     .cta-btn-whatsapp:hover {
-      background: #16a34a;
+      background: #1f6940;
       transform: translateY(-2px);
     }
 
@@ -207,6 +216,7 @@
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 1.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     .stat-item {
@@ -214,18 +224,16 @@
     }
 
     .stat-number {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--gold-primary);
       margin-bottom: 0.25rem;
     }
 
     .stat-label {
       font-size: 0.85rem;
-      color: var(--text-gray);
-      font-weight: 500;
+      color: var(--text-muted);
+      font-weight: 600;
     }
 
     /* Section Headers */
@@ -237,15 +245,16 @@
       font-size: 2.1rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
+      color: #fff;
     }
 
     .section-desc {
-      color: var(--text-gray);
+      color: var(--text-muted);
       margin-bottom: 2.5rem;
       font-size: 1.05rem;
     }
 
-    /* Filters */
+    /* Category Filter Buttons */
     .filters {
       display: flex;
       gap: 0.75rem;
@@ -255,8 +264,8 @@
 
     .filter-btn {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-gray);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
       padding: 0.6rem 1.3rem;
       border-radius: 999px;
       cursor: pointer;
@@ -266,10 +275,10 @@
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background: var(--primary-blue);
-      color: white;
-      border-color: var(--primary-blue);
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border-color: var(--gold-primary);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     }
 
     /* Projects Grid */
@@ -292,15 +301,15 @@
 
     .card:hover {
       transform: translateY(-8px);
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7);
     }
 
     .card-img-wrapper {
       position: relative;
       height: 220px;
       overflow: hidden;
-      background: #111827;
+      background: #14171f;
       cursor: pointer;
     }
 
@@ -309,16 +318,18 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      filter: brightness(0.95);
     }
 
     .card-img-wrapper:hover img {
       transform: scale(1.08);
+      filter: brightness(1.05);
     }
 
     .card-img-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(7, 13, 24, 0.6);
+      background: rgba(15, 17, 21, 0.65);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -331,14 +342,14 @@
     }
 
     .zoom-btn {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(212, 175, 55, 0.2);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      padding: 8px 16px;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 8px 18px;
       border-radius: 999px;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -354,7 +365,7 @@
     .card-category {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--primary-cyan);
+      color: var(--gold-primary);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 0.4rem;
@@ -368,7 +379,7 @@
     }
 
     .card-text {
-      color: var(--text-gray);
+      color: var(--text-muted);
       font-size: 0.92rem;
       margin-bottom: 1.5rem;
       flex-grow: 1;
@@ -383,9 +394,9 @@
     }
 
     .tag {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: #d1d5db;
       font-size: 0.75rem;
       padding: 0.3rem 0.65rem;
       border-radius: 6px;
@@ -395,7 +406,7 @@
     .card-actions {
       display: flex;
       gap: 0.75rem;
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       padding-top: 1.2rem;
     }
 
@@ -414,28 +425,29 @@
     }
 
     .btn-action-primary {
-      background: rgba(37, 99, 235, 0.2);
-      border: 1px solid rgba(37, 99, 235, 0.5);
-      color: #93c5fd;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold-light);
       flex: 1;
     }
 
     .btn-action-primary:hover {
-      background: var(--primary-blue);
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      background: var(--gold-primary);
+      color: #0f1115;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
     .btn-download {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--card-border);
-      color: var(--text-gray);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
     }
 
     .btn-download:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
       color: #fff;
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     /* Trust & Credentials */
@@ -446,6 +458,7 @@
       padding: 2.5rem;
       margin-top: 3.5rem;
       backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     .trust-grid {
@@ -457,7 +470,7 @@
 
     .trust-card {
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       padding: 1.4rem;
       border-radius: 12px;
       display: flex;
@@ -467,13 +480,13 @@
     }
 
     .trust-card:hover {
-      border-color: rgba(56, 189, 248, 0.3);
+      border-color: var(--card-border);
       transform: translateY(-3px);
     }
 
     .trust-icon {
       font-size: 1.5rem;
-      color: #38bdf8;
+      color: var(--gold-primary);
       margin-bottom: 0.4rem;
     }
 
@@ -485,12 +498,12 @@
 
     .trust-desc {
       font-size: 0.85rem;
-      color: var(--text-gray);
+      color: var(--text-muted);
     }
 
     .trust-link {
       font-size: 0.88rem;
-      color: #38bdf8;
+      color: var(--gold-light);
       text-decoration: none;
       word-break: break-all;
       margin-top: 0.4rem;
@@ -502,6 +515,7 @@
 
     .trust-link:hover {
       text-decoration: underline;
+      color: var(--gold-primary);
     }
 
     /* Lightbox Modal */
@@ -510,8 +524,8 @@
       position: fixed;
       inset: 0;
       z-index: 2000;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
       align-items: center;
       justify-content: center;
       padding: 2rem;
@@ -525,25 +539,25 @@
       max-width: 90%;
       max-height: 85vh;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
     }
 
     .modal-close {
       position: absolute;
       top: 25px;
       left: 25px;
-      color: white;
+      color: var(--gold-light);
       font-size: 2rem;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       width: 45px;
       height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     html[dir="rtl"] .modal-close {
@@ -577,10 +591,10 @@
     }
 
     footer {
-      border-top: 1px solid var(--card-border);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       padding: 2.5rem 0;
       text-align: center;
-      color: var(--text-gray);
+      color: var(--text-muted);
       font-size: 0.9rem;
     }
 
@@ -599,7 +613,7 @@
   <nav class="top-nav">
     <div class="container nav-wrapper">
       <div class="logo-badge">
-        <i class="fa-solid fa-graduation-cap" style="color: #38bdf8;"></i>
+        <i class="fa-solid fa-scroll"></i>
         <span>ضياء الدين تراب</span>
       </div>
       <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">
@@ -608,17 +622,17 @@
     </div>
   </nav>
 
-  <!-- Hero Header with Personal Profile Image -->
+  <!-- Hero Header -->
   <header>
     <div class="container">
       
-      <!-- Personal Photo with Glow Frame -->
+      <!-- Personal Photo with Academic Gold Frame -->
       <div class="profile-avatar-container">
         <img src="da04e8b4-1b93-4a83-8fa9-8dcdf8af6951.jpg" alt="ضياء الدين تراب" class="profile-avatar">
       </div>
 
       <div class="hero-badge" data-i18n="badge">
-        <i class="fa-solid fa-certificate"></i> باحث أكاديمي ومختص تصميم علمي معتمد
+        <i class="fa-solid fa-feather-pointed"></i> باحث أكاديمي ومختص تصميم علمي معتمد
       </div>
       <h1 data-i18n="heroTitle">ضياء الدين تراب</h1>
       <p class="subtitle" data-i18n="heroDesc">
@@ -630,7 +644,7 @@
           <i class="fa-brands fa-whatsapp"></i> <span data-i18n="heroWhatsapp">محادثة واتساب فورية</span>
         </a>
         <a href="#projects" class="cta-btn cta-btn-primary">
-          <i class="fa-solid fa-layer-group"></i> <span data-i18n="heroExplore">استعراض سابقة الأعمال</span>
+          <i class="fa-solid fa-book-bookmark"></i> <span data-i18n="heroExplore">استعراض سابقة الأعمال</span>
         </a>
       </div>
 
@@ -791,8 +805,8 @@
 
     <!-- Trust & Credentials Section -->
     <div class="trust-section">
-      <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem;" data-i18n="trustTitle">إثبات المعرض المهني وقنوات التواصل المباشرة</h3>
-      <p style="color: var(--text-gray); font-size: 0.95rem;" data-i18n="trustDesc">
+      <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff;" data-i18n="trustTitle">إثبات المعرض المهني وقنوات التواصل المباشرة</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="trustDesc">
         بيانات التواصل المباشرة والاعتمادات الرسمية لضمان الجدية وسرعة التنسيق والتعاقد:
       </p>
 
